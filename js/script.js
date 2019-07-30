@@ -12,38 +12,35 @@ let randomQuote = '';
 
 let quotes = [
   {
-    quote: '"Not all those who wander are lost;"' ,
+    quote: `Not all those who wander are lost;`,
     source: 'J.R.R. Tolkien',
     citation: 'The Fellowship of the Ring',
     year: 1954
   },
   {
-    quote: '"...even if that were absolutely true, then I should one day like to show by my work what such an eccentric, such a nobody, has in his heart."',
+    quote: `...even if that were absolutely true, then I should one day like to show by my work what such an eccentric, such a nobody, has in his heart.`,
     source: 'Vincent Van Gogh',
-    citation: ' ',
-    year: 0
+    
   },
   {
-    quote: '"The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom."',
+    quote: `The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.`,
     source: 'Isaac Asimov',
-    citation: ' ',
-    year: 0
+    
   },
   {
-    quote: '"In three words I can sum up everything I' + "'ve learned about life: it goes on." + '"',
+    quote: `In three words I can sum up everything I've learned about life: it goes on.`,
     source: 'Robert Frost',
-    citation:' ',
-    year: 0
+    
   },
   {
-    quote: '"Go placidly amid the noise and haste, and remember what peace there may be in silence."',
+    quote: `Go placidly amid the noise and haste, and remember what peace there may be in silence.`,
     source: 'Max Ehrmann',
     citation: "Desiderata",
     year: 1952
   },
 ];
 
-//log test that array of quotes is functional and get it to display nicely
+//log test that array of quotes is functional and get it to display nicely in console
 
 for ( let i = 0; i < quotes.length; i += 1 ){
 randomQuote = quotes[i].quote;
@@ -61,7 +58,6 @@ function getRandomQuote(array) {
   return array[randomNumber];
 }
 
-//console.log(getRandomQuote(quotes));
 
 /***
   Create the `printQuote` function to: 
@@ -75,23 +71,46 @@ function getRandomQuote(array) {
    - Don't forget to close that final `p` tag.
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
+
+//build print quote function
+
  function printQuote(){
   randomQuote = getRandomQuote(quotes);
   console.log(randomQuote);
   let html = ' ';
-  html = <p> + randomQuote.quote + "\n " + randomQuote.source + </p>;
-  if(randomQuote.citation != ' ') {
-    html += ", " + randomQuote.citation;
-  };
-  
-  if (randomQuote.year != 0){
-    html += ", " + randomQuote.year;
-  };
 
+//build html string
+
+  html = 
+    '<p class="quote">' + randomQuote.quote + '</p>' +
+    '<p class="source">' + randomQuote.source;
+
+//Decide if citations and/or year should be added to the string
+
+      if(randomQuote.citation) {
+        html += '<span class="citation">' + randomQuote.citation + '</span>';
+      };
+ 
+      if (randomQuote.year){
+        html += '<span class="year">' + randomQuote.year + '</span>';
+      };
+
+//Add last closing p tag
+
+  html += '</p>';
+
+//log html string to console for testing
   console.log(html);
+
+//Set inner html of "quote-box" to html string
+  
+document.getElementById("quote-box").innerHTML = html;
+
  }
 
-printQuote();
+ //call the printQuote function
+
+ printQuote();
 
 /***
   When the "Show another quote" button is clicked, the event listener 
