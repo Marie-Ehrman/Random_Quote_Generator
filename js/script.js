@@ -84,10 +84,9 @@ project 1 - A Random Quote Generator
 //log test that array of quotes is functional and get it to display nicely in console
 
 for ( let i = 0; i < quotes.length; i += 1 ){
-randomQuote = quotes[i].quote;
-source = quotes[i].source;
-
-console.log(randomQuote + "\n" + source);
+  randomQuote = quotes[i].quote;
+  source = quotes[i].source;
+  console.log(randomQuote + "\n" + source);
 }
 
 
@@ -108,20 +107,20 @@ I wish I had thought of it myslef!
 
 function randomBG() {
   //get a random number to set "red" portion 
-  let x = Math.floor(Math.random() * 256);
+    let x = Math.floor(Math.random() * 256);
   //get a random number to set "green" portion
-  let y = Math.floor(Math.random() * 256);
+    let y = Math.floor(Math.random() * 256);
   //get a random number to set "blue" portion
-  let z = Math.floor(Math.random() * 256);
+    let z = Math.floor(Math.random() * 256);
 
   //set color variable to insert as css background color
-  let color = "rgb(" + x + "," + y + "," + z + ")";
+    let color = "rgb(" + x + "," + y + "," + z + ")";
 
   //log background color to the console to test the function  
-  console.log(color);
+    console.log(color);
 
   //write the random color to the css file in background
-  document.body.style.background = color;
+    document.body.style.background = color;
 
   }
 
@@ -130,43 +129,43 @@ function randomBG() {
 
  function printQuote(){
 
-  randomQuote = getRandomQuote(quotes);
+        randomQuote = getRandomQuote(quotes);
 
-  //log quote to console to test function
-  console.log(randomQuote);
+      //log quote to console to test function
+        console.log(randomQuote);
 
-  //begin html string to insert into .html file
-  let html = ' ';
+      //begin html string to insert into .html file
+        let html = ' ';
 
-  html = 
-    '<p class="quote">' + randomQuote.quote + '</p>' +
-    '<p class="source">' + randomQuote.source;
+        html = 
+          '<p class="quote">' + randomQuote.quote + '</p>' +
+          '<p class="source">' + randomQuote.source;
 
-  //Decide if citations and/or year should be added to the string
+      //Decide if citations and/or year should be added to the string
 
-      if(randomQuote.citation) {
-        html += '<span class="citation">' + randomQuote.citation + '</span>';
-      };
- 
-      if (randomQuote.year){
-        html += '<span class="year">' + randomQuote.year + '</span>';
-      };
-      if (randomQuote.tag){
-        html += '<span class="tag">' + randomQuote.tag + '</span>';
-      };
+            if(randomQuote.citation) {
+              html += '<span class="citation">' + randomQuote.citation + '</span>';
+            };
+      
+            if (randomQuote.year){
+              html += '<span class="year">' + randomQuote.year + '</span>';
+            };
+            if (randomQuote.tag){
+              html += '<span class="tag">' + randomQuote.tag + '</span>';
+            };
 
-  //Add last closing p tag
-    html += '</p>';
+      //Add last closing p tag
+        html += '</p>';
 
-  //log html string to console for testing
-   console.log(html);
+      //log html string to console for testing
+        console.log(html);
 
-  //Set inner html of "quote-box" to html string
-  
-  document.getElementById("quote-box").innerHTML = html;
+      //Set inner html of "quote-box" to html string
+      
+        document.getElementById("quote-box").innerHTML = html;
 
-  //call random background color function
-  randomBG();
+      //call random background color function
+        randomBG();
 
  }
 
@@ -174,8 +173,8 @@ function randomBG() {
  
 //call the printQuote function when button is clicked
 
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+  document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 //set timer for screen to change, based on setInterval() MDN link provided in instructions
 
-let quoteTimer = window.setInterval(printQuote, 10000);
+  let quoteTimer = window.setInterval(printQuote, 10000);
