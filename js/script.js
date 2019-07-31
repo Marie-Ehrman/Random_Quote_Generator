@@ -100,8 +100,8 @@ function getRandomQuote(array) {
 
 /*Found nifty function on w3 
 https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
-to randomly change background color on click of load quote. Not sure what the
-rules are on using pre-existing code, but this is all stuff I know and is very basic JS.
+to randomly change background color. Not sure what the rules are on using pre-existing code,
+but this is all stuff I know and is very basic JS.
 I wish I had thought of it myslef!
 */
 
