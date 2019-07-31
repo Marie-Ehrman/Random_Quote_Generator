@@ -4,65 +4,80 @@ project 1 - A Random Quote Generator
 ******************************************/
 
 
-//declare variables like random quote and the quotes array
+//declare and build the quotes array of objects
 
-let randomQuote = '';
 
-let quotes = [
-  {
-    quote: `Not all those who wander are lost;`,
-    source: 'J.R.R. Tolkien',
-    citation: 'The Fellowship of the Ring',
-    year: 1954
+  let quotes = [
+    {
+      quote: `Not all those who wander are lost;`,
+      source: 'J.R.R. Tolkien',
+      citation: 'The Fellowship of the Ring',
+      year: 1954,
+      tag: "  Inspirational, Mindfulness"
 
-  },
-  {
-    quote: `...even if that were absolutely true, then I should one day like to show by my work what such an eccentric, such a nobody, has in his heart.`,
-    source: 'Vincent Van Gogh',
-    
-  },
-  {
-    quote: `The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.`,
-    source: 'Isaac Asimov',
-    
-  },
-  {
-    quote: `In three words I can sum up everything I've learned about life: it goes on.`,
-    source: 'Robert Frost',
-    
-  },
-  {
-    quote: `Go placidly amid the noise and haste, and remember what peace there may be in silence.`,
-    source: 'Max Ehrmann',
-    citation: "Desiderata",
-    year: 1952
+    },
+    {
+      quote: `...even if that were absolutely true, then I should one day like to show by my work what such an eccentric, such a nobody, has in his heart.`,
+      source: 'Vincent Van Gogh',
+      tag: "  Mindfulness, Inspirational"
+      
+    },
+    {
+      quote: `The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.`,
+      source: 'Isaac Asimov',
+      tag: "  Food for Thought"
+      
+    },
+    {
+      quote: `In three words I can sum up everything I've learned about life: it goes on.`,
+      source: 'Robert Frost',
+      tag: "  Inspirational"
+      
+    },
+    {
+      quote: `Go placidly amid the noise and haste, and remember what peace there may be in silence.`,
+      source: 'Max Ehrmann',
+      citation: "Desiderata",
+      year: 1952,
+      tag: "  Mindfulness"
 
-  },
-  {
-    quote: `To live is the rarest thing in the world. Most people exist, that is all.`,
-    source: 'Oscar Wilde',
+    },
+    {
+      quote: `To live is the rarest thing in the world. Most people exist, that is all.`,
+      source: 'Oscar Wilde',
+      tag: "  Food for Thought"
 
-  },
-  {
-    quote: `Nearly all men can stand adversity, but if you want to test a man's character, give him power.`,
-    source: 'Abraham Lincoln',
+    },
+    {
+      quote: `Nearly all men can stand adversity, but if you want to test a man's character, give him power.`,
+      source: 'Abraham Lincoln',
+      tag: "  Food for Thought"
 
-  }, 
-  {
-    quote: `The secret to getting ahead is getting started.`,
-    source: 'Mark Twain',
+    }, 
+    {
+      quote: `The secret to getting ahead is getting started.`,
+      source: 'Mark Twain',
+      tag: "  Inspirational, Life"
 
-  },
-  {
-    quote: `The most common way people give up their power is by thinking they don’t have any.`,
-    source: 'Alice Walker',
+    },
+    {
+      quote: `The most common way people give up their power is by thinking they don’t have any.`,
+      source: 'Alice Walker',
+      tag: "  Inspirational"
 
-  },
-  {
-    quote: `If you’re not making mistakes, then you’re not making decisions.`,
-    source: 'Catherine Cook',
+    },
+    {
+      quote: `If you’re not making mistakes, then you’re not making decisions.`,
+      source: 'Catherine Cook',
+      tag: "  Life"
 
-  },
+    },
+    {
+      quote: `Don't cry because it's over, smile because it happened.`,
+      source: 'Dr. Seuss',
+      tag: "  Life"
+
+    }
   
 ];
 
@@ -84,38 +99,50 @@ function getRandomQuote(array) {
   return array[randomNumber];
 }
 
-/*try out function found in 
+/*Found nifty function on w3 
 https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
-to randomly change background color on click of load quote.
+to randomly change background color on click of load quote. Not sure what the
+rules are on using pre-existing code, but this is all stuff I know and is very basic JS.
+I wish I had thought of it myslef!
 */
 
 function randomBG() {
-  var x = Math.floor(Math.random() * 256);
-  var y = Math.floor(Math.random() * 256);
-  var z = Math.floor(Math.random() * 256);
-  var color = "rgb(" + x + "," + y + "," + z + ")";
+  //get a random number to set "red" portion 
+  let x = Math.floor(Math.random() * 256);
+  //get a random number to set "green" portion
+  let y = Math.floor(Math.random() * 256);
+  //get a random number to set "blue" portion
+  let z = Math.floor(Math.random() * 256);
 
-//log background color to the console to test the function  
-console.log(color);
+  //set color variable to insert as css background color
+  let color = "rgb(" + x + "," + y + "," + z + ")";
 
+  //log background color to the console to test the function  
+  console.log(color);
+
+  //write the random color to the css file in background
   document.body.style.background = color;
+
   }
 
 
 //build print quote function
 
  function printQuote(){
-  randomQuote = getRandomQuote(quotes);
-  console.log(randomQuote);
-  let html = ' ';
 
-//build html string
+  randomQuote = getRandomQuote(quotes);
+
+  //log quote to console to test function
+  console.log(randomQuote);
+
+  //begin html string to insert into .html file
+  let html = ' ';
 
   html = 
     '<p class="quote">' + randomQuote.quote + '</p>' +
     '<p class="source">' + randomQuote.source;
 
-//Decide if citations and/or year should be added to the string
+  //Decide if citations and/or year should be added to the string
 
       if(randomQuote.citation) {
         html += '<span class="citation">' + randomQuote.citation + '</span>';
@@ -124,20 +151,23 @@ console.log(color);
       if (randomQuote.year){
         html += '<span class="year">' + randomQuote.year + '</span>';
       };
+      if (randomQuote.tag){
+        html += '<span class="tag">' + randomQuote.tag + '</span>';
+      };
 
-//Add last closing p tag
+  //Add last closing p tag
+    html += '</p>';
 
-  html += '</p>';
+  //log html string to console for testing
+   console.log(html);
 
-//log html string to console for testing
-  console.log(html);
-
-//Set inner html of "quote-box" to html string
+  //Set inner html of "quote-box" to html string
   
-document.getElementById("quote-box").innerHTML = html;
+  document.getElementById("quote-box").innerHTML = html;
 
-//call random backgorund function
-randomBG();
+  //call random background color function
+  randomBG();
+
  }
 
 
