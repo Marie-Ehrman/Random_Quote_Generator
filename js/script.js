@@ -13,25 +13,25 @@ project 1 - A Random Quote Generator
       source: 'J.R.R. Tolkien',
       citation: 'The Fellowship of the Ring',
       year: 1954,
-      tag: "  Inspirational, Mindfulness"
+      tag: "  mindfulness, inspirational"
 
     },
     {
       quote: `...even if that were absolutely true, then I should one day like to show by my work what such an eccentric, such a nobody, has in his heart.`,
       source: 'Vincent Van Gogh',
-      tag: "  Mindfulness, Inspirational"
+      tag: "  mindfulness, inspirational"
       
     },
     {
       quote: `The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.`,
       source: 'Isaac Asimov',
-      tag: "  Food for Thought"
+      tag: "  food for thought"
       
     },
     {
       quote: `In three words I can sum up everything I've learned about life: it goes on.`,
       source: 'Robert Frost',
-      tag: "  Inspirational"
+      tag: "  inspirational"
       
     },
     {
@@ -39,43 +39,43 @@ project 1 - A Random Quote Generator
       source: 'Max Ehrmann',
       citation: "Desiderata",
       year: 1952,
-      tag: "  Mindfulness"
+      tag: "  mindfulness"
 
     },
     {
       quote: `To live is the rarest thing in the world. Most people exist, that is all.`,
       source: 'Oscar Wilde',
-      tag: "  Food for Thought"
+      tag: "  food for thought"
 
     },
     {
       quote: `Nearly all men can stand adversity, but if you want to test a man's character, give him power.`,
       source: 'Abraham Lincoln',
-      tag: "  Food for Thought"
+      tag: "  food for thought"
 
     }, 
     {
       quote: `The secret to getting ahead is getting started.`,
       source: 'Mark Twain',
-      tag: "  Inspirational, Life"
+      tag: "  inspirational, life"
 
     },
     {
       quote: `The most common way people give up their power is by thinking they don’t have any.`,
       source: 'Alice Walker',
-      tag: "  Inspirational"
+      tag: "  inspirational"
 
     },
     {
       quote: `If you’re not making mistakes, then you’re not making decisions.`,
       source: 'Catherine Cook',
-      tag: "  Life"
+      tag: "  life"
 
     },
     {
       quote: `Don't cry because it's over, smile because it happened.`,
       source: 'Dr. Seuss',
-      tag: "  Life"
+      tag: "  life"
 
     }
   
